@@ -20,13 +20,6 @@ class Player:
             self.bIsResting = str(self.player_data['bIsResting'])
             self.bBrokenLegs = str(self.player_data['bBrokenLegs'])
             self.UnlockedCharacters = self.player_data['UnlockedCharacters']
-            self.SkinPaletteSection1 = str(self.player_data['SkinPaletteSection1'])
-            self.SkinPaletteSection2 = str(self.player_data['SkinPaletteSection2'])
-            self.SkinPaletteSection3 = str(self.player_data['SkinPaletteSection3'])
-            self.SkinPaletteSection4 = str(self.player_data['SkinPaletteSection4'])
-            self.SkinPaletteSection5 = str(self.player_data['SkinPaletteSection5'])
-            self.SkinPaletteSection6 = str(self.player_data['SkinPaletteSection6'])
-            self.SkinPaletteVariation = self.player_data['SkinPaletteVariation']
 
     def grow(self, growth='1.0'):
         growth = float(growth)
@@ -61,13 +54,6 @@ class Player:
         self.player_data['bIsResting'] = self.bBrokenLegs.lower()
         self.player_data['bBrokenLegs'] = self.bBrokenLegs.lower()
         self.player_data['UnlockedCharacters'] = str(self.UnlockedCharacters)
-        self.player_data['SkinPaletteSection1'] = str(self.SkinPaletteSection1)
-        self.player_data['SkinPaletteSection2'] = str(self.SkinPaletteSection2)
-        self.player_data['SkinPaletteSection3'] = str(self.SkinPaletteSection3)
-        self.player_data['SkinPaletteSection4'] = str(self.SkinPaletteSection4)
-        self.player_data['SkinPaletteSection5'] = str(self.SkinPaletteSection5)
-        self.player_data['SkinPaletteSection6'] = str(self.SkinPaletteSection6)
-        self.player_data['SkinPaletteVariation'] = str(self.SkinPaletteVariation)
 
         with open(self.path, 'w') as file:
             file.write(json.dumps(self.player_data, indent=4))
